@@ -15,8 +15,8 @@ for elem in content:
     outstr = "30" + elem
     print("")
     print("Encoding: " + outstr)
-    y, sr = librosa.load(elem, duration=30.0)
-    librosa.output.write_wav(outstr, y, sr)
+    y, sr = librosa.load(elem, duration=30.0, sr=44100, mono=False)
+    librosa.output.write_wav(outstr, y, 44100)
 
 print("")
 
